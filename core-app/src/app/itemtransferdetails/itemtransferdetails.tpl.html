@@ -1,0 +1,63 @@
+<div class="row">
+	<div class="container-fluid formContainer">
+		<div class="row">
+			<h3 class="col-md-8 col-sm-8">Item History</h3>
+		</div>
+		<hr />
+		<div style="margin-bottom: 5px;">
+			<button type="button"
+					class="btn btn-primary btn-sm"
+					data-ng-click="addTransferDetailsModal()">
+				<span class="fa fa-user-plus"></span> Create Transfer
+			</button>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>To</th>
+					<th>Quantity</th>
+					<th>Status</th>
+					<th>Date</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="itemTransfer in itemTransfers.itemTransferDetails">
+					<td>
+					   	<span class="fa fa-cogs"> {{$index + 1}}.</span>
+					   	<span>{{itemTransfer.name}}</span>
+					<td>
+					   	<span>{{itemTransfer.recipient || 'ADMIN'}}</span>
+					</td>
+					<td>
+					   	<span>{{itemTransfer.quantity}}</span>						  						
+					</td>
+					<td>
+					   	<span>{{itemTransfer.itemTranferDetailsStatus}}</span>						  						
+					</td>
+					<td>
+					   	<span>{{parseDate(itemTransfer.created)}}</span>						  						
+					</td>
+					<td class="deleteWidth text-right" data-ng-hide="!itemTransfer.recipient">
+						<span class="deleteWidth text-right" data-ng-hide="itemTransfer.itemTranferDetailsStatus === 'RETURN'">
+							<a data-ng-click="addTransferReturnDetailsModal(itemTransfer)"><span class="fa fa-exchange"></span></a>
+						</span>
+					</td>
+					<td class="text-right" data-ng-show="!itemTransfer.recipient">
+						
+					</td>
+					<td class="deleteWidth text-right" data-ng-hide="!itemTransfer.recipient">
+						<span class="deleteWidth text-right" data-ng-hide="itemTransfer.itemTranferDetailsStatus === 'ISSUE'">
+							<a data-ng-click="deleteTransferDetailModal(itemTransfer)"><span class="fa fa-trash-o"></span></a>
+						</span>
+					</td>
+					<td class="text-right" data-ng-show="!itemTransfer.recipient">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>			
+	</div>
+</div>

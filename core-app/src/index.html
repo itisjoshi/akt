@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="study" ng-controller="AppCtrl">
+	<head>
+		<title ng-bind="pageTitle"></title>
+
+		<link rel="icon" type="image/png" href="http://www.ctrlthreads.co.in/favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+		<link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+		<!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+		<script type="text/javascript" src="<%= file %>"></script><% }); %>
+	</head>
+	<body data-ui-view="">
+	</body>
+</html>

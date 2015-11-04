@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>My Resume</title>
+    </head>
+    <body>
+		<h2>Detail of AboutMe</h2>
+		<p>Name: ${firstName}</p>
+    </body>
+</html>
+
+/*
+Host: sql6.freemysqlhosting.net
+Database name: sql686474
+Database user: sql686474
+Database password: bA1!fJ9%
+Port number: 3306
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://talent.c4ouh6vm4kkt.us-west-2.rds.amazonaws.com:3306/Talent?sessionVariables=storage_engine=InnoDB&useUnicode=yes&characterEncoding=UTF-8
+jdbc.username=Talent
+jdbc.password=Talent123$%^
+
+*/

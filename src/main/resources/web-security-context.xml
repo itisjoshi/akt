@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Rest authentication entry point configuration -->
+	<http use-expressions="true" entry-point-ref="restAuthenticationEntryPoint">
+		<intercept-url pattern="/api/**" method="OPTIONS" access="permitAll()" />
+		<intercept-url pattern="/api/**" access="isAuthenticated()" requires-channel="http" />
+		<form-login login-processing-url="/api/login" username-parameter="username" password-parameter="password"
+			authentication-success-handler-ref="restSuccessHandler"
+			authentication-failure-handler-ref="restFailureHandler" />
+		<logout success-handler-ref="restLogoutSuccessHandler" delete-cookies="JSESSIONID" logout-url="/api/logout" />
+		<access-denied-handler ref="restAccessDeniedSuccessHandler" />
+	</http>
+
+	<!-- Connect the custom authentication success handler -->
+	<beans:bean id="restAuthenticationEntryPoint"
+		class="com.silverneem.study.web.security.RestAuthenticationEntryPoint" />
+	<beans:bean id="restSuccessHandler"
+		class="com.silverneem.study.web.security.RestAuthenticationSuccessHandler" />
+	<!-- Using default failure handler -->
+	<beans:bean id="restFailureHandler"
+		class="com.silverneem.study.web.security.RestAuthenticationFailureHandler" />
+	<beans:bean id="restLogoutSuccessHandler"
+		class="com.silverneem.study.web.security.RestLogoutSuccessHandler" />
+	<beans:bean id="restAccessDeniedSuccessHandler"
+		class="com.silverneem.study.web.security.RestAccessDeniedHandler" />
+	<beans:bean id="studyUserDetailsService"
+		class="com.silverneem.study.web.security.StudyUserDetailsService" />
+	<beans:bean id="bcryptEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	<beans:bean id="studyAuthenticationProvider"
+		class="com.silverneem.study.web.security.StudyAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="studyUserDetailsService" />
+		<beans:property name="passwordEncoder" ref="bcryptEncoder" />
+	</beans:bean>
+	
+	<context:component-scan base-package="com.silverneem.study.core.service" />
+
+	<!-- Authentication manager -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="studyAuthenticationProvider" />
+	</authentication-manager>
+</beans:beans>

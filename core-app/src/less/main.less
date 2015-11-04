@@ -1,0 +1,96 @@
+/**
+ * Font Awesome
+ */
+@import '../../vendor/font-awesome/less/font-awesome.less';
+
+/**
+ * Bootstrap
+ */
+@import '../../vendor/bootstrap/less/bootstrap.less';
+
+/*
+ * Open Sans - Google Fonts
+ */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);
+
+@import 'variables.less';
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+a, a:hover {
+	color: @stDarkGrey;
+	cursor: pointer;
+}
+
+hr {
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+.headerNextSection {
+	margin-top: 60px;
+}
+
+.footerPrevSection {
+	margin-bottom: 40px;
+}
+
+textarea.form-control {
+	height: 120px;
+}
+
+.table {
+	border-collapse: separate;
+	border-spacing: 0px 5px;
+
+	thead {
+		tr {
+			th {
+				background: @stClientColor;
+				color: @stClientBackground;
+			}
+			th:first-child {
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+			th:last-child {
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			td {
+				border-bottom: solid 1px @stGrey;
+				border-top: solid 1px @stGrey;
+			}
+			td:first-child {
+				border-left: solid 1px @stGrey;
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+			td:last-child {
+				border-right: solid 1px @stGrey;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+			&:hover {
+				td {
+					border-color: @stClientColor;
+				}
+				td:first-child {
+					border-left-color: @stClientColor;
+				}
+				td:last-child {
+					border-right-color: @stClientColor;
+				}
+			}
+		}
+	}
+}
+
+@import '../app/app.less';

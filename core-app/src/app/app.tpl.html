@@ -1,0 +1,6 @@
+<header data-ng-include="'header.tpl.html'" data-ng-controller="HeaderCtrl"></header>
+<section class="container-fluid headerNextSection footerPrevSection" data-ui-view=""></section>
+<footer class="container-fluid loggedInFooter" data-ng-include="'footer.tpl.html'" data-ng-controller="FooterCtrl"></footer>
+<div class="loadingIndicator" data-ng-show="isLoading()">
+	<span class="fa fa-spinner fa-spin"></span>
+</div>

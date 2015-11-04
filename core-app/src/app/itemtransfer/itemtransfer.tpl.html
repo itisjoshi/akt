@@ -1,0 +1,52 @@
+<div class="row">
+	<div class="container-fluid formContainer">
+		<div class="row">
+			<h3 class="col-md-8 col-sm-8">Item History</h3>
+			<div style="margin: 12px 0px 10px 0px;" class="col-md-4 col-sm-4">
+				<div class="form-group has-feedback" style="margin: 0px;">
+					<input type="text" class="form-control" data-ng-model="searchterm" data-ng-change="search()" placeholder="Search" />
+					<span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<div style="margin-bottom: 5px;">
+			<button type="button"
+					class="btn btn-primary btn-sm"
+					data-ng-click="addTransferModal()">
+				<span class="fa fa-user-plus"></span> Create Load Receive
+			</button>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>From</th>
+					<th>Item Name</th>
+					<th>Received On</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="itemTransfer in itemTransfers">
+					<td>
+					   	<a data-ui-sref="study.itemtransferdetails({itemtransferId: itemTransfer.id})"><span class="fa fa-cogs"> {{$index + 1}}.</span>
+					   	<span>{{itemTransfer.name}}</span></a>
+					<td>
+					   	<span>{{itemTransfer.buyer}}</span>
+					</td>
+					<td>
+					   	<span>{{itemTransfer.item.name}}</span>
+					</td>
+					<td>
+					   	<span>{{parseDate(itemTransfer.created)}}</span>						  	
+					
+					</td>
+					<td class="deleteWidth text-right">
+						<a data-ng-click="deleteTransferModal(itemTransfer)"><span class="fa fa-trash-o"></span></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>			
+	</div>
+</div>
