@@ -1,0 +1,71 @@
+<div class="row">
+	<div class="container-fluid formContainer">
+		<div class="row">
+			<h3 class="col-md-8 col-sm-8">Patients</h3>
+			<div style="margin: 12px 0px 10px 0px;" class="col-md-4 col-sm-4">
+				<div class="form-group has-feedback" style="margin: 0px;">
+					<input type="text" class="form-control" data-ng-model="searchterm" data-ng-change="search()" placeholder="Search" />
+					<span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<div style="margin-bottom: 5px;">
+			<button type="button"
+					class="btn btn-primary btn-sm"
+					data-ng-click="addPatientModal()">
+				<span class="fa fa-user-plus"></span> Add Patient
+			</button>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Father</th>
+					<th>DOB</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+					<th>Email</th>
+					<th>Gender</th>
+					<th>Id</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="patient in patients">
+					<td>
+					   	<a data-ui-sref="study.patientprofile({patientid: patient.id})"><span> {{$index + 1}}.</span>
+					   	<span>{{patient.name}}</span></a>
+					<td>
+					   	<span>{{patient.fatherName}}</span>
+					</td>
+					<td>
+					   	<span>{{parseDate(patient.dob)}}</span>						  	
+					</td>
+					<td>
+					   	<span>{{patient.phone}}</span>
+					</td>
+					<td>
+					   	<span>{{patient.mobile}}</span>
+					</td>
+					<td>
+					   	<span>{{patient.email}}</span>
+					</td>
+					<td>
+					   	<span>{{patient.gender}}</span>
+					</td>
+					<td>
+					   	<span>{{patient.id}}</span>
+					</td>
+					<td class="editWidth text-right">
+						<a data-ng-click="updatePatientModal(patient)"><span class="fa fa-pencil"></span></a>
+					</td>
+					<td class="deleteWidth text-right">
+						<a data-ng-click="deletePatientModal(patient)"><span class="fa fa-trash-o"></span></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>			
+	</div>
+</div>

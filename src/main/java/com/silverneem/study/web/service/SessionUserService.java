@@ -6,19 +6,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import com.silverneem.study.core.service.ItemTransferDetailsService;
 import com.silverneem.study.web.security.StudyUserDetails;
 @Component
 public class SessionUserService {
 
-	@Autowired
-	private ItemTransferDetailsService studentService;
-	
 	public Map<String, Object> getCurrentUser() {
 		Map<String, Object> currentUser = new HashMap<String, Object>();
 		

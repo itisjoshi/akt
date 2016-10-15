@@ -1,0 +1,197 @@
+<div class="row">
+	<div class="container-fluid formContainer">
+		<div class="col-sm-12 col-md-12">
+			<h3>Patient - Immunization
+			<span span style="cursor:pointer" data-ui-sref="study.patientimmunization({patientid: patient.id})">View Profile</span>
+			</h3>
+			<div class="row">
+				<div class="col-sm-6 col-md-6"><strong>Name:</strong> <span>{{patient.name}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Date of Birth:</strong> <span>{{parseDate(patient.dob)}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Father's Name:</strong> <span>{{patient.fatherName}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Alternate Email:</strong> <span>{{patient.phone}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Mobile:</strong> <span>{{patient.mobile}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Email:</strong> <span>{{patient.email}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Gender:</strong> <span>{{patient.gender}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Family Tree:</strong> <span>{{patient.familyTree}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Ailment:</strong> <span>{{patient.ailment}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Allergy:</strong> <span>{{patient.allergy}}</span></div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>BIRTH</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === 'BIRTH' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>6 WEEKS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '6 WEEKS' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>10 WEEKS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '10 WEEKS' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>14 WEEKS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '14 WEEKS' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>9 MONTHS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '9 MONTHS' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>15TH-18TH MONTH</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '15TH-18TH MONTH' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>2 YEARS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '2 YEARS' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>5 YEARS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '5 YEARS' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>10 YEARS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '10 YEARS' && patientimmunization.type === 'OLD'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>6 WEEKS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '6 WEEKS' && patientimmunization.type === 'NEW'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>10 WEEKS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '10 WEEKS' && patientimmunization.type === 'NEW'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>14 WEEKS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '14 WEEKS' && patientimmunization.type === 'NEW'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>4 TO 8 WEEKS INTERVALS 3 DOSES</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === '4 TO 8 WEEKS INTERVALS 3 DOSES' && patientimmunization.type === 'NEW'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>LESS THAN 13 YEARS 1 DOSE MORE THAN 13 YEARS 2 DOSES</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === 'LESS THAN 13 YEARS 1 DOSE MORE THAN 13 YEARS 2 DOSES' && patientimmunization.type === 'NEW'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>AFTER 18 MONTHS 1 DOSE 6-12 MONTHS INTERVAL 2 DOSES</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === 'AFTER 18 MONTHS 1 DOSE 6-12 MONTHS INTERVAL 2 DOSES' && patientimmunization.type === 'NEW'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>LESS THAN 13 YEARS 1 DOSE MORE THAN 13 YEARS 2 DOSES</h3>
+			<div class="row">
+				<div data-ng-repeat="patientimmunization in patientimmunizations">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientimmunization.age === 'LESS THAN 13 YEARS 1 DOSE MORE THAN 13 YEARS 2 DOSES' && patientimmunization.type === 'NEW'">
+						<strong>{{patientimmunization.vaccine}}:</strong> <span>{{parseDate(patientimmunization.dateToBeGiven)}} - {{parseDate(patientimmunization.dateGiven)}}</span>
+						<a data-ng-click="addPatientImmunizationModal(patientimmunization)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>				
+	</div>
+</div>

@@ -14,7 +14,7 @@ angular.module('security', [
 	Roles: [
 		{
 			role: 'Admin',
-			homeState: 'study.home'
+			homeState: 'study.patient'
 		}
 	],
 	DefaultHomeState: 'study.login',

@@ -1,0 +1,99 @@
+<div class="row">
+	<div class="container-fluid formContainer">
+		<div class="col-sm-12 col-md-12">
+			<h3>Patient - 
+			<span style="cursor:pointer" data-ui-sref="study.patientvisit({patientid: patient.id})">View Visits</span>
+			<span span style="cursor:pointer" data-ui-sref="study.patientimmunization({patientid: patient.id})">View Immunization</span>
+			</h3>
+			<div class="row">
+				<div class="col-sm-6 col-md-6"><strong>Name:</strong> <span>{{patient.name}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Date of Birth:</strong> <span>{{parseDate(patient.dob)}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Father's Name:</strong> <span>{{patient.fatherName}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Alternate Email:</strong> <span>{{patient.phone}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Mobile:</strong> <span>{{patient.mobile}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Email:</strong> <span>{{patient.email}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Gender:</strong> <span>{{patient.gender}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Family Tree:</strong> <span>{{patient.familyTree}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Ailment:</strong> <span>{{patient.ailment}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Allergy:</strong> <span>{{patient.allergy}}</span></div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>BIRTH H/O</h3>
+			<div class="row">
+				<div data-ng-repeat="patientprofile in patientprofiles">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientprofile.category === 'BIRTH'">
+						<strong>{{patientprofile.property}}:</strong> <span>{{patientprofile.value}}</span>
+						<a data-ng-click="addPatientProfileModal(patientprofile)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>NEONATAL PERIOD</h3>
+			<div class="row">
+				<div data-ng-repeat="patientprofile in patientprofiles">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientprofile.category === 'NEONATAL'">
+						<strong>{{patientprofile.property}}:</strong> <span>{{patientprofile.value}}</span>
+						<a data-ng-click="addPatientProfileModal(patientprofile)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>FAMILY H/O</h3>
+			<div class="row">
+				<div data-ng-repeat="patientprofile in patientprofiles">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientprofile.category === 'FAMILY'">
+						<strong>{{patientprofile.property}}:</strong> <span>{{patientprofile.value}}</span>
+						<a data-ng-click="addPatientProfileModal(patientprofile)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>DEVELOPMENTAL MILESTONES</h3>
+			<div class="row">
+				<div data-ng-repeat="patientprofile in patientprofiles">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientprofile.category === 'DEVELOPMENTAL'">
+						<strong>{{patientprofile.property}}:</strong> <span>{{patientprofile.value}}</span>
+						<a data-ng-click="addPatientProfileModal(patientprofile)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>ALLERGY H/O</h3>
+			<div class="row">
+				<div data-ng-repeat="patientprofile in patientprofiles">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientprofile.category === 'ALLERGY'">
+						<strong>{{patientprofile.property}}:</strong> <span>{{patientprofile.value}}</span>
+						<a data-ng-click="addPatientProfileModal(patientprofile)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>SENSORY SYSTEM</h3>
+			<div class="row">
+				<div data-ng-repeat="patientprofile in patientprofiles">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientprofile.category === 'SENSORY'">
+						<strong>{{patientprofile.property}}:</strong> <span>{{patientprofile.value}}</span>
+						<a data-ng-click="addPatientProfileModal(patientprofile)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>OTHERS</h3>
+			<div class="row">
+				<div data-ng-repeat="patientprofile in patientprofiles">
+					<div class="col-sm-4 col-md-4" data-ng-show="patientprofile.category === 'OTHERS'">
+						<strong>{{patientprofile.property}}:</strong> <span>{{patientprofile.value}}</span>
+						<a data-ng-click="addPatientProfileModal(patientprofile)"><span class="fa fa-pencil"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,13 +1,12 @@
 angular.module('study', [
 	'templates-app',
 	'templates-common',
-	'study.home',
 	'study.login',
 	'study.logout',
-	'study.itemfull',
-	'study.item',
-	'study.itemtransfer',
-	'study.itemtransferdetails',
+	'study.patient',
+	'study.patientvisit',
+	'study.patientimmunization',
+	'study.patientprofile',
 	'security',
 	'service.httprequesttracker',
 	'ui.router'
@@ -15,8 +14,7 @@ angular.module('study', [
 
 .constant('ApiConstants', {
 
-//	BaseUrl: 'http://ctrlthreads.cloudapp.net/talent/api/',
-	BaseUrl: 'http://192.168.100.242:8080/api/',
+	BaseUrl: 'http://localhost:8081/ROOT/api/',
 })
 
 .config(function myAppConfig ($stateProvider, $urlRouterProvider, $provide) {
@@ -35,7 +33,7 @@ angular.module('study', [
 		templateUrl: 'app.tpl.html',
 		controller: 'RootCtrl',
 		data: {
-			pageTitle: 'Invent',
+			pageTitle: 'Brindha clinic',
 			roles: [ 'Anonymous' ]
 		},
 		resolve: {
@@ -104,16 +102,8 @@ angular.module('study', [
 		
 		var adminMenuItems = [
 			{
-				state: 'study.item',
-				name: 'Items'
-			},
-			{
-				state: 'study.itemtransfer',
-				name: 'Item Issue'
-			},
-			{
-				state: 'study.home',
-				name: 'Balance'
+				state: 'study.patient',
+				name: 'Patients'
 			},
 			{
 				state: 'study.logout',

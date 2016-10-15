@@ -1,0 +1,55 @@
+<div class="row">
+	<div class="container-fluid formContainer">
+		<div class="row">
+			<h3 class="col-md-8 col-sm-8">Visits of Patient
+			<span span style="cursor:pointer" data-ui-sref="study.patientprofile({patientid: patient.id})">- View Profile</span>
+			</h3>
+		</div>
+		<hr />
+		<div style="margin-bottom: 5px;">
+			<button type="button"
+					class="btn btn-primary btn-sm"
+					data-ng-click="addPatientVisitModal()">
+				<span class="fa fa-user-plus"></span> Create Patient Visit
+			</button>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h3>Patient
+			</h3>
+			<div class="row">
+				<div class="col-sm-6 col-md-6"><strong>Name:</strong> <span>{{patient.name}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Date of Birth:</strong> <span>{{parseDate(patient.dob)}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Father's Name:</strong> <span>{{patient.fatherName}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Alternate Email:</strong> <span>{{patient.phone}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Mobile:</strong> <span>{{patient.mobile}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Email:</strong> <span>{{patient.email}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Gender:</strong> <span>{{patient.gender}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Family Tree:</strong> <span>{{patient.familyTree}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Ailment:</strong> <span>{{patient.ailment}}</span></div>
+				<div class="col-sm-6 col-md-6"><strong>Allergy:</strong> <span>{{patient.allergy}}</span></div>
+			</div>
+		</div>
+		<hr />
+		<div class="col-sm-12 col-md-12">
+			<div class="row">
+				<div class="panel panel-default" data-ng-repeat="patientvisit in patientVisits">
+					<div class="panel-heading">
+				    	<span data-ng-click="toggleCustom(patientvisit)" class="fa fa-cogs link" class="panel-title"> {{$index + 1}}.</span>
+				    	<a><span class="link" data-ng-click="toggleCustom(patientvisit)">{{parseDate(patientvisit.visitDate)}}</span></a>
+				    	<span>Weight-{{patientvisit.weight}} </span>
+				    	<span>Height-{{patientvisit.height}} </span>
+				    	<span>Head-{{patientvisit.headCircumference}} </span>
+				    	<a data-ng-click="updatePatientVisitModal(patientvisit)"><span class="editWidth pull-right fa fa-pencil"></span></a>
+				    	<a data-ng-click="deletePatientVisitModal(patientvisit)">
+				    		<span class="deleteWidth pull-right fa fa-trash-o"></span>
+				    	</a>
+				 	</div>
+					 <div id="collapseOne" data-ng-show="patientvisit.custom" class="panel-collapse collapse in">
+					 		<div class="panel-body">{{patientvisit.description}}
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>

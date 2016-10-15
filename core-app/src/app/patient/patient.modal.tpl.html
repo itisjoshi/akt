@@ -1,0 +1,117 @@
+<div class="modal-header">
+	<h3 class="modal-title">{{operation}} Patient</h3>
+</div>
+<div class="modal-body">
+	<form name="classForm">
+			<div class="row">
+			<div class="alert alert-danger alert-white rounded  col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1" role="alert" data-ng-show="registerError">
+				<button data-dismiss="alert" class="close" type="button">×</button>
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Error:</span>
+		  				{{registerErrorMessage || 'Enter all fields'}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+				<div class="form-group">
+					<label class="control-label" for="item">Name</label>
+					<div class="input-group">
+					  <span class="input-group-addon fa fa-user" id="basic-addon1"></span>
+						<input type="text" name="item" class="form-control" data-ng-model="patient.name">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">Email</label>
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">@</span>
+					  <input type="text" class="form-control" placeholder="Email" data-ng-model="patient.email" aria-describedby="basic-addon1">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">Father's Name</label>
+					<div class="input-group">
+					  <span class="input-group-addon fa fa-user" id="basic-addon1"></span>
+					  <input type="text" class="form-control" placeholder="Father's Name of the child" data-ng-model="patient.fatherName" aria-describedby="basic-addon1">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">DOB</label>				
+					<div classs="input-group">
+						<input type="text" name="startDate" data-ng-model="patient.dob"
+								data-datepicker-popup="{{datepickerFormat}}" data-is-open="startDateOpened"
+								data-datepicker-options="datepickerOptions" data-show-button-bar="false" data-show-weeks="false"
+								class="form-control" aria-describedby="Start Date">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" data-ng-click="openCal($event, 'startDate')">
+								<i class="glyphicon glyphicon-calendar"></i>
+							</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">Mobile</label>
+					<div class="input-group">
+					  <span class="input-group-addon fa fa-mobile" id="basic-addon1"></span>
+					  <input type="text" class="form-control" placeholder="Phone Number" data-ng-model="patient.mobile" aria-describedby="basic-addon1">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">LandLine</label>
+					<div class="input-group">
+					  <span class="input-group-addon fa fa-phone" id="basic-addon2"></span>
+					  <input type="text" class="form-control" placeholder="Phone number" data-ng-model="patient.phone" aria-describedby="basic-addon2">
+					</div>				
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">Gender</label>
+						<select class="form-control" name="" id="" ng-model="patient.gender">
+						  <option value="Female">Female</option>
+						  <option value="Male">Male</option>
+						</select>
+				</div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">Family Tree</label>
+					  <input type="text" class="form-control" placeholder="Family Tree" data-ng-model="patient.familyTree" aria-describedby="basic-addon2">
+				</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">Ailment</label>
+					  <textarea class="form-control" placeholder="Ailments" data-ng-model="patient.ailment" aria-describedby="basic-addon2"></textarea>
+				</div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div class="form-group">
+					<label class="control-label" for="facultyDescription">Allergy</label>
+					  <textarea class="form-control" placeholder="Allergy" data-ng-model="patient.allergy" aria-describedby="basic-addon2"></textarea>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-success" data-ng-click="save()">Save</button>
+	<button class="btn btn-warning" data-ng-click="cancel()">Cancel</button>
+</div>
